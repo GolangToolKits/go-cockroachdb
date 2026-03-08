@@ -2,6 +2,8 @@ module github.com/GolangToolKits/go-cockroachdb
 
 go 1.25.5
 
+require github.com/lib/pq v1.11.2
+
 require (
 	github.com/cockroachdb/cockroach-go/v2 v2.4.3 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect

@@ -16,12 +16,12 @@ type DbRows struct {
 type Database interface {
 	Connect() bool
 	// BeginTransaction() Transaction
-	// Test(query string, args ...any) *DbRow
-	// Insert(query string, args ...any) (bool, int64)
-	// Update(query string, args ...any) bool
-	// Get(query string, args ...any) *DbRow
-	// GetList(query string, args ...any) *DbRows
-	// Delete(query string, args ...any) bool
+	Test(query string, args ...any) *DbRow
+	Insert(query string, args ...any) (bool, int64)
+	Update(query string, args ...any) bool
+	Get(query string, args ...any) *DbRow
+	GetList(query string, args ...any) *DbRows
+	Delete(query string, args ...any) bool
 	Close() bool
 }
 
