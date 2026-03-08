@@ -15,7 +15,7 @@ type DbRows struct {
 // Database Database
 type Database interface {
 	Connect() bool
-	// BeginTransaction() Transaction
+	BeginTransaction() Transaction
 	Test(query string, args ...any) *DbRow
 	Insert(query string, args ...any) (bool, int64)
 	Update(query string, args ...any) bool

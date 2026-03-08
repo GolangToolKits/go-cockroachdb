@@ -52,6 +52,18 @@ func (c *CockDB) Test(query string, args ...any) *DbRow {
 	return c.Get(query, args...)
 }
 
+// BeginTransaction BeginTransaction
+func (c *CockDB) BeginTransaction() Transaction {
+	var trans Transaction
+	var pgTrans CockDbTx
+	tx, err := c.db.Begin()
+	if err == nil && tx != nil {
+		pgTrans.Tx = tx
+	}
+	trans = &pgTrans
+	return trans
+}
+
 // Insert Insert requires use of  RETURNING id on end of insert query
 func (c *CockDB) Insert(query string, args ...any) (bool, int64) {
 	var success = false

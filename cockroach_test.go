@@ -191,6 +191,7 @@ func TestCockDB_Get(t *testing.T) {
 			db := c.New()
 			gotc := db.Connect()
 			got := db.Get(tt.query, tt.args...)
+			db.Close()
 			// TODO: update the condition below to compare got with tt.want.
 			if gotc != true || len(got.Row) != tt.want {
 				t.Errorf("Get() = %v, want %v", got, tt.want)
@@ -227,6 +228,7 @@ func TestCockDB_GetList(t *testing.T) {
 			db := c.New()
 			gotc := db.Connect()
 			got := db.GetList(tt.query, tt.args...)
+			db.Close()
 			// TODO: update the condition below to compare got with tt.want.
 			if gotc != true || len(got.Rows) != tt.want {
 				t.Errorf("GetList() = %v, want %v", got, tt.want)
@@ -263,9 +265,41 @@ func TestCockDB_Delete(t *testing.T) {
 			db := c.New()
 			gotc := db.Connect()
 			got := c.Delete(tt.query, tt.args...)
+			db.Close()
 			// TODO: update the condition below to compare got with tt.want.
 			if gotc != true || got != false {
 				t.Errorf("Delete() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestCockDB_BeginTransaction(t *testing.T) {
+	tests := []struct {
+		name string // description of this test case
+		want gocockroachdb.Transaction
+	}{
+		// TODO: Add test cases.
+		{
+			name: "test 1",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// TODO: construct the receiver type.
+			var c gocockroachdb.CockDB
+			c.Database = "customer_orders"
+			c.Host = "localhost"
+			c.Port = "26257"
+			c.User = "root"
+			c.Sslmode = "disable"
+			db := c.New()
+			gotc := db.Connect()
+			got := db.BeginTransaction()
+			db.Close()
+			// TODO: update the condition below to compare got with tt.want.
+			if gotc != true || got == nil {
+				t.Errorf("BeginTransaction() = %v, want %v", got, tt.want)
 			}
 		})
 	}
