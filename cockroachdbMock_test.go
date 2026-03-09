@@ -196,7 +196,7 @@ func TestCockDbMock_Update(t *testing.T) {
 			c.MockUpdateSuccess1 = true
 
 			db := c.New()
-			got := db.Update(tt.query, tt.args)
+			got := db.Update(tt.query, tt.args...)
 			// TODO: update the condition below to compare got with tt.want.
 			if !got {
 				t.Errorf("Update() = %v, want %v", got, tt.want)
@@ -214,14 +214,28 @@ func TestCockDbMock_Get(t *testing.T) {
 		want  *gocockroachdb.DbRow
 	}{
 		// TODO: Add test cases.
+		{
+			name: "test 1",
+			//want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
 			var c gocockroachdb.CockDbMock
-			got := c.Get(tt.query, tt.args)
+			c.Database = "customer_orders"
+			c.Host = "localhost"
+			c.Port = "26257"
+			c.User = "root"
+			c.Sslmode = "disable"
+			c.MockRow1 = &gocockroachdb.DbRow{
+				Row: []string{"1", "test"},
+			}
+
+			db := c.New()
+			got := db.Get(tt.query, tt.args...)
 			// TODO: update the condition below to compare got with tt.want.
-			if true {
+			if got.Row[0] != "1" {
 				t.Errorf("Get() = %v, want %v", got, tt.want)
 			}
 		})
@@ -237,14 +251,30 @@ func TestCockDbMock_GetList(t *testing.T) {
 		want  *gocockroachdb.DbRows
 	}{
 		// TODO: Add test cases.
+		{
+			name: "test 1",
+			//want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
 			var c gocockroachdb.CockDbMock
-			got := c.GetList(tt.query, tt.args)
+			c.Database = "customer_orders"
+			c.Host = "localhost"
+			c.Port = "26257"
+			c.User = "root"
+			c.Sslmode = "disable"
+			c.MockRows1 = &gocockroachdb.DbRows{
+				Rows: [][]string{
+					{"1", "test 1"},
+					{"2", "test 2"},
+				},
+			}
+			db := c.New()
+			got := db.GetList(tt.query, tt.args...)
 			// TODO: update the condition below to compare got with tt.want.
-			if true {
+			if got.Rows[0][0] != "1" {
 				t.Errorf("GetList() = %v, want %v", got, tt.want)
 			}
 		})
@@ -260,14 +290,26 @@ func TestCockDbMock_Delete(t *testing.T) {
 		want  bool
 	}{
 		// TODO: Add test cases.
+		{
+			name: "test 1",
+			//want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
 			var c gocockroachdb.CockDbMock
-			got := c.Delete(tt.query, tt.args)
+			c.Database = "customer_orders"
+			c.Host = "localhost"
+			c.Port = "26257"
+			c.User = "root"
+			c.Sslmode = "disable"
+			c.MockInsertID1 = 1
+			c.MockDeleteSuccess1 = true
+			db := c.New()
+			got := db.Delete(tt.query, tt.args)
 			// TODO: update the condition below to compare got with tt.want.
-			if true {
+			if !got {
 				t.Errorf("Delete() = %v, want %v", got, tt.want)
 			}
 		})
@@ -280,14 +322,26 @@ func TestCockDbMock_Close(t *testing.T) {
 		want bool
 	}{
 		// TODO: Add test cases.
+		{
+			name: "test 1",
+			//want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
 			var c gocockroachdb.CockDbMock
-			got := c.Close()
+			c.Database = "customer_orders"
+			c.Host = "localhost"
+			c.Port = "26257"
+			c.User = "root"
+			c.Sslmode = "disable"
+			c.MockInsertID1 = 1
+			c.MockCloseSuccess = true
+			db := c.New()
+			got := db.Close()
 			// TODO: update the condition below to compare got with tt.want.
-			if true {
+			if !got {
 				t.Errorf("Close() = %v, want %v", got, tt.want)
 			}
 		})

@@ -8,7 +8,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-// MyDB MyDB
+// CockDB CockDB
 type CockDB struct {
 	Host        string
 	User        string

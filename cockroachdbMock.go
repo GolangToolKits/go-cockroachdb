@@ -2,7 +2,6 @@ package gocockroachdb
 
 import "database/sql"
 
-// PgDBMock PgDBMock
 type CockDbMock struct {
 	Host        string
 	User        string

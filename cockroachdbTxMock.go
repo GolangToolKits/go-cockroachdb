@@ -2,7 +2,7 @@ package gocockroachdb
 
 import "database/sql"
 
-// PgDbTxMock PgDbTxMock
+// CockDbTxMock CockDbTxMock
 type CockDbTxMock struct {
 	Tx         *sql.Tx
 	CockDbMock *CockDbMock

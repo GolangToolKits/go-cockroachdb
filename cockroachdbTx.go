@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-// PgDbTx PgDbTx
+// CockDbTx CockDbTx
 type CockDbTx struct {
 	Tx *sql.Tx
 }
