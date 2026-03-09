@@ -1,5 +1,5 @@
 # go-cockroachdb
-A simple mockable postgres db interface
+A simple mockable cockroach db interface
 
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/GolangToolKits/go-cockroachdb)](https://goreportcard.com/report/github.com/GolangToolKits/go-cockroachdb)
