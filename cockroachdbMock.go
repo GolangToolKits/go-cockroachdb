@@ -118,13 +118,6 @@ func (c *CockDbMock) New() Database {
 	return c
 }
 
-// // GetNewDatabase GetNewDatabase
-// func (c *CockDbMock) GetNewDatabase() Database {
-// 	//var db Database
-// 	//db = c
-// 	return c
-// }
-
 // BeginTransaction BeginTransaction
 func (c *CockDbMock) BeginTransaction() Transaction {
 	var trans Transaction
