@@ -347,3 +347,47 @@ func TestCockDbMock_Close(t *testing.T) {
 		})
 	}
 }
+
+func TestCockDbMock_Exec(t *testing.T) {
+	tests := []struct {
+		name string // description of this test case
+		// Named input parameters for target function.
+		query   string
+		want    bool
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+		{
+			name: "test 1",
+			//want: true,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// TODO: construct the receiver type.
+			var c gocockroachdb.CockDbMock
+			c.Database = "customer_orders"
+			c.Host = "localhost"
+			c.Port = "26257"
+			c.User = "root"
+			c.Sslmode = "disable"
+			c.MockExecSuccess = true
+			db := c.New()
+			got := db.Close()
+			got, gotErr := c.Exec(tt.query)
+			if gotErr != nil {
+				if !tt.wantErr {
+					t.Errorf("Exec() failed: %v", gotErr)
+				}
+				return
+			}
+			if tt.wantErr {
+				t.Fatal("Exec() succeeded unexpectedly")
+			}
+			// TODO: update the condition below to compare got with tt.want.
+			if !got {
+				t.Errorf("Exec() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

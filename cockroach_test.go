@@ -305,7 +305,7 @@ func TestCockDB_BeginTransaction(t *testing.T) {
 	}
 }
 
-func TestCockDB_CreateTable(t *testing.T) {
+func TestCockDB_Exec(t *testing.T) {
 	tests := []struct {
 		name string // description of this test case
 		// Named input parameters for target function.
@@ -341,9 +341,9 @@ func TestCockDB_CreateTable(t *testing.T) {
 			c.Sslmode = "disable"
 			db := c.New()
 			gotc := db.Connect()
-			got := db.Exec(tt.query1)
-			got2 := db.Exec(tt.query2)
-			got3 := db.Exec(tt.query3)
+			got, _ := db.Exec(tt.query1)
+			got2, _ := db.Exec(tt.query2)
+			got3, _ := db.Exec(tt.query3)
 
 			db.Close()
 			// TODO: update the condition below to compare got with tt.want.

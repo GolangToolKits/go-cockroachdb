@@ -106,6 +106,7 @@ type CockDbMock struct {
 	MockRows8     *DbRows
 
 	MockExecSuccess bool
+	MockExecError   error
 }
 
 // Connect Connect
@@ -257,8 +258,8 @@ func (c *CockDbMock) Delete(query string, args ...any) bool {
 	return rtn
 }
 
-func (c *CockDbMock) Exec(query string) bool {
-	return c.MockExecSuccess
+func (c *CockDbMock) Exec(query string) (bool, error) {
+	return c.MockExecSuccess, c.MockExecError
 }
 
 // Close Close

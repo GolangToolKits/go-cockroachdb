@@ -215,7 +215,7 @@ func (c *CockDB) Delete(query string, args ...any) bool {
 	return success
 }
 
-func (c *CockDB) Exec(query string) bool {
+func (c *CockDB) Exec(query string) (bool, error) {
 	var rtn bool
 	var a []any
 	rs, err := c.db.Exec(query, a...)
@@ -223,7 +223,7 @@ func (c *CockDB) Exec(query string) bool {
 		log.Println(rs)
 		rtn = true
 	}
-	return rtn
+	return rtn, err
 }
 
 func (c *CockDB) Close() bool {
