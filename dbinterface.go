@@ -22,6 +22,7 @@ type Database interface {
 	Get(query string, args ...any) *DbRow
 	GetList(query string, args ...any) *DbRows
 	Delete(query string, args ...any) bool
+	Exec(query string) bool
 	Close() bool
 }
 

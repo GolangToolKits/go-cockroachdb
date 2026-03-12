@@ -304,3 +304,52 @@ func TestCockDB_BeginTransaction(t *testing.T) {
 		})
 	}
 }
+
+func TestCockDB_CreateTable(t *testing.T) {
+	tests := []struct {
+		name string // description of this test case
+		// Named input parameters for target function.
+		query1 string
+		query2 string
+		query3 string
+		want   bool
+	}{
+		// TODO: Add test cases.
+		{
+			name:   "test 1",
+			query1: "create database IF NOT EXISTS roachtest6; ",
+			query2: "use roachtest6",
+			query3: "CREATE TABLE public.orders (" +
+				"id INT8 NOT NULL GENERATED ALWAYS AS IDENTITY," +
+				"order_number VARCHAR(20) NOT NULL," +
+				"entered DATE NOT NULL," +
+				"updated DATE NULL," +
+				"CONSTRAINT orders_pkey PRIMARY KEY (id ASC)" +
+				" ) WITH (schema_locked = true);",
+			want: true,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// TODO: construct the receiver type.
+
+			var c gocockroachdb.CockDB
+			c.Database = "customer_orders"
+			c.Host = "localhost"
+			c.Port = "26257"
+			c.User = "root"
+			c.Sslmode = "disable"
+			db := c.New()
+			gotc := db.Connect()
+			got := db.Exec(tt.query1)
+			got2 := db.Exec(tt.query2)
+			got3 := db.Exec(tt.query3)
+
+			db.Close()
+			// TODO: update the condition below to compare got with tt.want.
+			if !gotc || !got || !got2 || !got3 {
+				t.Errorf("CreateTable() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

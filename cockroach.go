@@ -215,6 +215,17 @@ func (c *CockDB) Delete(query string, args ...any) bool {
 	return success
 }
 
+func (c *CockDB) Exec(query string) bool {
+	var rtn bool
+	var a []any
+	rs, err := c.db.Exec(query, a...)
+	if err == nil {
+		log.Println(rs)
+		rtn = true
+	}
+	return rtn
+}
+
 func (c *CockDB) Close() bool {
 	var rtn = false
 	err := c.db.Close()
