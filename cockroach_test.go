@@ -319,7 +319,7 @@ func TestCockDB_Exec(t *testing.T) {
 			name:   "test 1",
 			query1: "create database IF NOT EXISTS roachtest6; ",
 			query2: "use roachtest6",
-			query3: "CREATE TABLE public.orders (" +
+			query3: "CREATE TABLE IF NOT EXISTS public.orders (" +
 				"id INT8 NOT NULL GENERATED ALWAYS AS IDENTITY," +
 				"order_number VARCHAR(20) NOT NULL," +
 				"entered DATE NOT NULL," +
