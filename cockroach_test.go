@@ -21,7 +21,7 @@ func TestCockDB_Connect(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
-			var c gocockroachdb.CockDB
+			var c gocockroachdb.CockRDB
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"
@@ -57,7 +57,7 @@ func TestCockDB_Test(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
-			var c gocockroachdb.CockDB
+			var c gocockroachdb.CockRDB
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"
@@ -99,7 +99,7 @@ func TestCockDB_Insert(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
-			var c gocockroachdb.CockDB
+			var c gocockroachdb.CockRDB
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"
@@ -144,7 +144,7 @@ func TestCockDB_Update(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
-			var c gocockroachdb.CockDB
+			var c gocockroachdb.CockRDB
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"
@@ -182,7 +182,7 @@ func TestCockDB_Get(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
-			var c gocockroachdb.CockDB
+			var c gocockroachdb.CockRDB
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"
@@ -219,7 +219,7 @@ func TestCockDB_GetList(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
-			var c gocockroachdb.CockDB
+			var c gocockroachdb.CockRDB
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"
@@ -256,7 +256,7 @@ func TestCockDB_Delete(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
-			var c gocockroachdb.CockDB
+			var c gocockroachdb.CockRDB
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"
@@ -287,7 +287,7 @@ func TestCockDB_BeginTransaction(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
-			var c gocockroachdb.CockDB
+			var c gocockroachdb.CockRDB
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"
@@ -333,7 +333,7 @@ func TestCockDB_Exec(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			// TODO: construct the receiver type.
 
-			var c gocockroachdb.CockDB
+			var c gocockroachdb.CockRDB
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"

@@ -8,7 +8,7 @@ A simple mockable cockroach db interface
 
     // Connecting to local insecure CockroachDB
     // For production cluster add password and set SslMode and Sslrootrert
-     cc := &CockDB{ 
+     cc := &CockRDB{ 
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"
@@ -33,7 +33,7 @@ A simple mockable cockroach db interface
 
 ```go
 
-    cc := &CockDB{ 
+    cc := &CockRDB{ 
 			c.Database = "customer_orders"
 			c.Host = "localhost"
 			c.Port = "26257"

@@ -9,7 +9,7 @@ import (
 )
 
 // CockDB CockDB
-type CockDB struct {
+type CockRDB struct {
 	Host        string
 	User        string
 	Password    string
@@ -22,7 +22,7 @@ type CockDB struct {
 }
 
 // Connect Connect
-func (c *CockDB) Connect() bool {
+func (c *CockRDB) Connect() bool {
 	var rtn = false
 	var conStr string
 	//postgresql://{username}:{password}@{host}:{port}/{database}?sslmode=verify-full&sslrootcert={root-cert}
@@ -48,12 +48,12 @@ func (c *CockDB) Connect() bool {
 }
 
 // Test Test
-func (c *CockDB) Test(query string, args ...any) *DbRow {
+func (c *CockRDB) Test(query string, args ...any) *DbRow {
 	return c.Get(query, args...)
 }
 
 // BeginTransaction BeginTransaction
-func (c *CockDB) BeginTransaction() Transaction {
+func (c *CockRDB) BeginTransaction() Transaction {
 	var trans Transaction
 	var pgTrans CockDbTx
 	tx, err := c.db.Begin()
@@ -65,7 +65,7 @@ func (c *CockDB) BeginTransaction() Transaction {
 }
 
 // Insert Insert requires use of  RETURNING id on end of insert query
-func (c *CockDB) Insert(query string, args ...any) (bool, int64) {
+func (c *CockRDB) Insert(query string, args ...any) (bool, int64) {
 	var success = false
 	var id int64 = -1
 	stmtIns, err := c.db.Prepare(query)
@@ -88,7 +88,7 @@ func (c *CockDB) Insert(query string, args ...any) (bool, int64) {
 }
 
 // Update Update
-func (c *CockDB) Update(query string, args ...any) bool {
+func (c *CockRDB) Update(query string, args ...any) bool {
 	var success = false
 	stmtUp, err := c.db.Prepare(query)
 	if err != nil {
@@ -111,7 +111,7 @@ func (c *CockDB) Update(query string, args ...any) bool {
 }
 
 // Get Get
-func (c *CockDB) Get(query string, args ...any) *DbRow {
+func (c *CockRDB) Get(query string, args ...any) *DbRow {
 	var rtn DbRow
 	stmtGet, err := c.db.Prepare(query)
 	if err != nil {
@@ -151,7 +151,7 @@ func (c *CockDB) Get(query string, args ...any) *DbRow {
 }
 
 // GetList GetList
-func (c *CockDB) GetList(query string, args ...any) *DbRows {
+func (c *CockRDB) GetList(query string, args ...any) *DbRows {
 	var rtn DbRows
 	stmtGet, err := c.db.Prepare(query)
 	if err != nil {
@@ -193,7 +193,7 @@ func (c *CockDB) GetList(query string, args ...any) *DbRows {
 }
 
 // Delete Delete
-func (c *CockDB) Delete(query string, args ...any) bool {
+func (c *CockRDB) Delete(query string, args ...any) bool {
 	var success = false
 	stmt, err := c.db.Prepare(query)
 	if err != nil {
@@ -215,7 +215,7 @@ func (c *CockDB) Delete(query string, args ...any) bool {
 	return success
 }
 
-func (c *CockDB) Exec(query string) (bool, error) {
+func (c *CockRDB) Exec(query string) (bool, error) {
 	var rtn bool
 	var a []any
 	rs, err := c.db.Exec(query, a...)
@@ -226,7 +226,7 @@ func (c *CockDB) Exec(query string) (bool, error) {
 	return rtn, err
 }
 
-func (c *CockDB) Close() bool {
+func (c *CockRDB) Close() bool {
 	var rtn = false
 	err := c.db.Close()
 	if err == nil {
@@ -235,6 +235,6 @@ func (c *CockDB) Close() bool {
 	return rtn
 }
 
-func (c *CockDB) New() Database {
+func (c *CockRDB) New() Database {
 	return c
 }

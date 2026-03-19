@@ -1,5 +1,5 @@
 mode: set
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:25.33,31.27 3 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:25.34,31.27 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:31.27,33.3 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:33.8,35.3 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:36.2,39.18 3 1
@@ -7,18 +7,18 @@ github.com/GolangToolKits/go-cockroachdb/cockroach.go:39.18,41.19 2 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:41.19,43.4 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:43.9,45.4 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:47.2,47.12 1 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:51.57,53.2 1 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:56.49,60.29 4 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:51.58,53.2 1 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:56.50,60.29 4 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:60.29,62.3 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:63.2,64.14 2 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:68.66,72.16 4 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:68.67,72.16 4 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:72.16,74.3 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:74.8,78.17 4 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:78.17,80.4 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:80.9,81.24 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:81.24,84.5 2 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:87.2,87.20 1 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:91.57,94.16 3 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:91.58,94.16 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:94.16,96.3 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:96.8,99.17 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:99.17,101.4 1 0
@@ -26,7 +26,7 @@ github.com/GolangToolKits/go-cockroachdb/cockroach.go:101.9,103.25 2 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:103.25,105.5 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:105.10,107.5 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:110.2,110.16 1 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:114.56,117.16 3 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:114.57,117.16 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:117.16,119.3 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:119.8,122.17 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:122.17,124.4 1 0
@@ -40,7 +40,7 @@ github.com/GolangToolKits/go-cockroachdb/cockroach.go:139.21,141.8 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:141.13,143.8 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:144.7,144.39 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:150.2,150.13 1 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:154.61,157.16 3 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:154.62,157.16 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:157.16,159.3 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:159.8,162.17 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:162.17,164.4 1 0
@@ -55,7 +55,7 @@ github.com/GolangToolKits/go-cockroachdb/cockroach.go:182.13,184.8 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:185.7,185.49 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:187.6,187.47 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:192.2,192.13 1 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:196.57,199.16 3 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:196.58,199.16 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:199.16,201.3 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:201.8,204.17 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:204.17,206.4 1 0
@@ -63,13 +63,13 @@ github.com/GolangToolKits/go-cockroachdb/cockroach.go:206.9,208.25 2 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:208.25,210.5 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:210.10,212.5 1 0
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:215.2,215.16 1 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:218.51,222.16 4 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:218.52,222.16 4 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:222.16,225.3 2 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:226.2,226.17 1 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:229.31,232.16 3 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:229.32,232.16 3 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:232.16,234.3 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroach.go:235.2,235.12 1 1
-github.com/GolangToolKits/go-cockroachdb/cockroach.go:238.33,240.2 1 1
+github.com/GolangToolKits/go-cockroachdb/cockroach.go:238.34,240.2 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroachdbMock.go:113.37,115.2 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroachdbMock.go:118.37,120.2 1 1
 github.com/GolangToolKits/go-cockroachdb/cockroachdbMock.go:123.53,129.2 5 1
